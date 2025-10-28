@@ -1,3 +1,9 @@
+The User Input Reflected vulnerability was retested on 12-August-2025 and found to be partially remediated. During the retest, it was observed that some application endpoints no longer reflect user-supplied input in the response. These endpoints now return appropriate HTTP 400 (Bad Request) or 404 (Not Found) status codes when invalid input is submitted, indicating that input validation and error handling have been improved.
+
+However, a few other endpoints still reflect portions of the user input in the HTTP response without proper sanitization or encoding. This behavior could still assist attackers in reconnaissance or serve as a potential vector for future injection-based attacks.
+
+This confirms that while partial remediation has been achieved, additional hardening is required to ensure all endpoints properly handle and sanitize user input.
+
 Retest Result – Verbose Error Messages (12-August-2025)
 
 The Verbose Error Messages vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the application continues to expose detailed error information when invalid or unexpected input is supplied.
