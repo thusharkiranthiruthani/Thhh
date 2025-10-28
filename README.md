@@ -1,4 +1,12 @@
+Retest Result – Verbose Error Messages (12-August-2025)
 
+The Verbose Error Messages vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the application continues to expose detailed error information when invalid or unexpected input is supplied.
+
+The responses still display Java stack traces, Tomcat error details, and Hibernate Query Language (HQL) parsing exceptions, revealing internal class names, file paths, and partial query structures. Such verbose error output provides valuable insights into the backend technologies, frameworks, and database structure, which could be leveraged by attackers to identify potential weaknesses.
+
+This confirms that the application has not implemented proper error handling or generic error responses, and sensitive debug information remains exposed.
+
+Status: Not Remediated
 Retest Result – User Input Reflected (12-August-2025)
 
 The User Input Reflected vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the application continues to reflect user-supplied input in the response without proper sanitization or encoding.
