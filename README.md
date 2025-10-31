@@ -1,45 +1,11 @@
-The User Input Reflected vulnerability was retested on 12-August-2025 and found to be partially remediated. During the retest, it was observed that some application endpoints no longer reflect user-supplied input in the response. These endpoints now return appropriate HTTP 400 (Bad Request) or 404 (Not Found) status codes when invalid input is submitted, indicating that input validation and error handling have been improved.
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjoxMTU0MCwiY2VydF9pZCI6NjcxMSwidHlwZSI6ImNvdXJzZSIsInRpbWVzdGFtcCI6MTc2NDUxNDMyMn0.66ca3373231acfb7
 
-However, a few other endpoints still reflect portions of the user input in the HTTP response without proper sanitization or encoding. This behavior could still assist attackers in reconnaissance or serve as a potential vector for future injection-based attacks.
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjo5MjMzLCJjZXJ0X2lkIjo2NzExLCJ0eXBlIjoiY291cnNlIiwidGltZXN0YW1wIjoxNzY0NTE0Mzc5fQ.1557f2a42c9cdd89
 
-This confirms that while partial remediation has been achieved, additional hardening is required to ensure all endpoints properly handle and sanitize user input.
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjo0MjYzLCJjZXJ0X2lkIjo2NzExLCJ0eXBlIjoiY291cnNlIiwidGltZXN0YW1wIjoxNzY0NTE0Mzk5fQ.c2a439c33140ea36
 
-Retest Result – Verbose Error Messages (12-August-2025)
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjo0MjU5LCJjZXJ0X2lkIjo2NzExLCJ0eXBlIjoiY291cnNlIiwidGltZXN0YW1wIjoxNzY0NTE0NDI3fQ.d2bd96dc7801965b
 
-The Verbose Error Messages vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the application continues to expose detailed error information when invalid or unexpected input is supplied.
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjozODQwLCJjZXJ0X2lkIjo2NzExLCJ0eXBlIjoiY291cnNlIiwidGltZXN0YW1wIjoxNzY0NTE0NDcxfQ.54d7242ed47d2c0c
 
-The responses still display Java stack traces, Tomcat error details, and Hibernate Query Language (HQL) parsing exceptions, revealing internal class names, file paths, and partial query structures. Such verbose error output provides valuable insights into the backend technologies, frameworks, and database structure, which could be leveraged by attackers to identify potential weaknesses.
-
-This confirms that the application has not implemented proper error handling or generic error responses, and sensitive debug information remains exposed.
-
-Status: Not Remediated
-Retest Result – User Input Reflected (12-August-2025)
-
-The User Input Reflected vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the application continues to reflect user-supplied input in the response without proper sanitization or encoding.
-
-Payloads inserted into input fields or parameters are still being reflected in the HTML response, confirming that user input is echoed back to the browser. Although no direct HTML or script execution was observed, this behavior could still aid an attacker in reconnaissance activities or serve as a vector for further exploitation under certain conditions.
-
-This indicates that the application does not yet implement adequate input validation or output encoding to prevent reflection of user-controlled data.
-
-Status: Not Remediated
-
-Retest Result – Exposure of Internal Documentation via Help Page (12-August-2025)
-
-The Exposure of Internal Documentation via Help Page vulnerability was retested on 12-August-2025 and found to be not remediated. During the retest, it was observed that the internal help or documentation page remains accessible to unauthenticated users.
-
-Unauthenticated access to this page still reveals internal configuration details, operational guidance, and system-related information that could assist an attacker in understanding the application’s architecture or internal environment. This exposure continues to pose an information disclosure risk and could potentially aid in further targeted attacks.
-
-This confirms that the application has not yet implemented proper authentication or access restrictions to limit access to internal documentation pages.
-
-Status: Not Remediated
-
-
-Retest Result – Verbose Error Messages (12-August-2025)
-
-The Verbose Error Messages vulnerability was retested on 12-August-2025 and found to be partially remediated. During the retest, it was observed that the application no longer exposes Java stack traces or Tomcat error details, indicating that these issues have been successfully mitigated.
-
-However, Hibernate Query Language (HQL) error details are still being displayed when invalid or unexpected input is provided. These error messages continue to reveal internal query structures, which could potentially assist an attacker in understanding database relationships and query logic.
-
-This confirms that while the remediation efforts have addressed some aspects of verbose error handling, further action is required to suppress or sanitize HQL parsing errors to prevent information disclosure.
-
-Status: Partially Remediated
+https://academy.attackiq.com/certificates/certificate-template?token=eyJ1c2VyX2lkIjoyMzUyNjQsInJlc291cmNlX2lkIjozNjM2LCJjZXJ0X2lkIjo2NzExLCJ0eXBlIjoiY291cnNlIiwidGltZXN0YW1wIjoxNzY0NTE0NTA2fQ.118cbf160cbf232a
